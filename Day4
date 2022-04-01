@@ -1,0 +1,137 @@
+const getCountries = () => {
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', 'https://restcountries.com/v3.1/all');
+    xhr.send();
+    xhr.responseType = 'json';
+    xhr.onload = ()=> {
+        // data
+        let data = xhr.response;
+
+
+      // country names
+        let countryNames = data.map((country) => country.name.common);
+        //region names of respective countries
+        let countryRegion = data.map((country) => (country.region));
+        //subregion names of respective countries
+        let countrySubregion = data.map((country) => (country.subregion));
+        //population count of respective countries
+        let countryPopulation = data.map((country) => (country.population));
+
+        //lets loop
+        for (var i = 0; i < data.length; i++){
+            let countryDetails = [
+                name = `Country name = ${countryNames[i]}`,
+                region = `Region name = ${countryRegion[i]}`,
+                sub_region = `Sub Region name = ${countrySubregion[i]}`,
+                population = `Countries population = ${countryPopulation[i]}`,
+            ]
+            console.log(countryDetails);
+        }<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+   
+var obj1 = {
+    name:"person1",
+age:5
+};
+var obj2 ={
+    age:5,
+    name:"person1",
+
+};
+let flag=true;
+
+if(Object.keys(obj1).length ==Object.keys(obj2).length){
+    for (key in obj1){
+        if (obj1[key]==obj2[key]){
+            continue;
+        }
+        else{
+            flag=false;
+            break;
+        }
+    }
+}
+else{
+    flag=false;
+}
+//print true if the two JSON are same//
+console.log(flag);
+
+// 4) TASK1:
+// 2)
+var myvar= 1;
+console.log("myvar");
+
+// 3)
+
+var firstName="Elangovan";
+var lastName="Kl";
+var martialStatus="Single";
+var country="India";
+var age=28;
+console.log(firstName,lastName,martialStatus,country,age);
+
+// 7)
+// Truthy:
+// if (true)const getCountries = () => {
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', 'https://restcountries.com/v3.1/all');
+    xhr.send();
+    xhr.responseType = 'json';
+    xhr.onload = ()=> {
+        let data = xhr.response;
+
+
+        //Country names
+        let countryNames = data.map((country) => country.name.common);
+
+        // country flags in png format
+        let countryFlagsPng = data.filter((country) => country.flags && country.flags.png)
+        .map((country) => country.flags.png);
+        //console.log(countryFlagsPng);
+
+
+
+
+        // lets loop
+        for (var i = 0; i < data.length; i++) {
+            let flagLinks = [
+                name = `Country name = ${countryNames[i]}`,
+                flag_png_link = `Flag png link = ${countryFlagsPng[i]}`,
+
+            ]
+
+            console.log(flagLinks);
+        }
+    }
+}
+
+
+getCountries(); 
+// if ({})
+// if ([])
+// if (42)
+// if ("0")
+
+// Falsy:
+// false,0,-0,on,Nan,undefined
+</head>
+<body>
+    <h2>task2</h2>
+    <p>use the rest countries API url</p>
+    <script src="restcountry.js"></script>
+    <script src="country.js"></script>
+    <script src="JSON.js"></script>
+</body>
+</html> 
+
+        }
+}
+
+// the list
+getCountries();
