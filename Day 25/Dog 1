@@ -1,0 +1,184 @@
+
+body{
+    margin: 0px;
+}
+.sec{
+    background-color: burlywood;
+    margin: 0px;
+   
+   
+}
+.pagecontentdiv{
+margin: 0px;
+padding:30px;
+background: url("https://images.pexels.com/photos/3752118/pexels-photo-3752118.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+background-size: cover;
+opacity: 2px;
+background-position: center;
+color: white;
+}
+.pagecontenthead{
+    margin: 0px;
+}
+.imgdiv{
+   
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.imgcontentdiv{
+    padding-left: 30px;
+background: whitesmoke;
+}
+#button{
+    font-size: 20px;
+    margin:20px;
+    width:60px;
+    background-color:blue;
+    color:white;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    
+
+}
+.buttondiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.head2{
+    margin:0px;
+    text-align: center;
+}
+
+@media(min-width:669px){
+    .pagecontentpara{
+        font-size:20px;<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Gallery</title>
+    <link rel="stylesheet" href="dog.css">
+</head>
+<body>
+    
+    <section class="sec">
+        <div class="pagecontentdiv">
+            <h2 class="pagecontenthead">DOG</h2>
+
+            <p class="pagecontentpara">Dogs have four legs and make a "bark," "woof," or "arf" sound. Dogs often chase cats, and most dogs will fetch a ball or stick.
+
+                Dogs can smell and hear better than humans, but cannot see well in color because they are color blind. Due to the anatomy of the eye, dogs can see better in dim light than humans. They also have a wider field of vision.
+                
+                Like wolves, wild dogs travel in groups called packs. Packs of dogs are ordered by rank, and dogs with low rank will submit to other dogs with higher rank. The highest ranked dog is called the alpha male. A dog in a group helps and cares for others. Domesticated dogs often view their owner as the alpha male.</p>
+            <h2 class="pagecontenthead">Dog life</h2>
+
+            <p class="pagecontentpara">Different dog breeds have different lifespans. In general, smaller dogs live longer than bigger ones.The size and the breed of the dog change how long the dog lives, on average. Breeds such as the Dachshund usually live for fifteen years, Chihuahuas can reach age twenty. The Great Dane, on the other hand has an average lifespan of six to eight years; some Great Danes have lived for ten years.</p>
+        </div>
+       
+        <div class="imgcontentdiv">
+            <div class="buttondiv"><h2 class="head2">Click here for more dog images</h2>
+                <br><button id="button">Click</button>
+            </div>
+          
+          <div class="imgdiv">
+            <div ><img class="imagediv1" alt=""width="500px" height="300px"></div>
+            <div ><img class="imagediv1" alt="" width="500px" height="300px"></div>
+            <div ><img class="imagediv1" alt="" width="500px" height="300px" ></div>
+   
+          </div>
+         </div>
+        
+        <div>
+            
+            <h3>Breeds list</h3>async function dogs(){
+    try {
+        let dogs=await fetch("https://dog.ceo/api/breeds/list/all")
+        let doglist=await dogs.json();
+        
+        console.log(doglist.message.basenji)
+        for( var dog in doglist.message){
+            let list=document.createElement("li");
+
+
+            list.innerHTML=dog;
+            let ul=document.getElementsByClassName("breedlist")[0];
+            ul.appendChild(list);
+            
+        }
+
+
+        
+    } catch (error) {
+        console.log(error)
+    }
+   
+}
+dogs();
+
+
+
+async function randomimage(){
+    try {
+        var getdata=await fetch("https://dog.ceo/api/breeds/image/random/3")
+         var imagedata=await getdata.json();
+
+         let img1=document.getElementsByClassName("imagediv1")[0];
+         let img2=document.getElementsByClassName("imagediv1")[1];
+         let img3=document.getElementsByClassName("imagediv1")[2];
+         img1.src=imagedata.message[0];
+         img2.src=imagedata.message[1];
+         img3.src=imagedata.message[2];
+
+         console.log(imagedata.message[0])
+         console.log(imagedata.message[1])
+         console.log(imagedata.message[2])
+    } catch (error) {
+        console.log(error)
+        
+    }
+    
+}
+randomimage();
+var button=document.getElementById("button")
+button.addEventListener("click",function(){
+    
+    randomimage();
+})
+
+
+async function subbreedlist(){
+    try {
+        let getdata=await fetch("")
+        
+    } catch (error) {
+        
+        console.log(error);
+    }
+
+}
+            <ul class="breedlist"></ul>
+        </div>
+        
+    </section>
+    
+    <script src="script.js"></script>
+
+</body>
+</html>
+        line-gap-override:3px ;
+    }
+    
+}
+@media(max-width:500px){
+    .imagediv1{
+        width:500px;
+    }
+}
+
+/* .breedlist{
+   
+} */
