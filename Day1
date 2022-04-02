@@ -1,0 +1,147 @@
+Difference between http1.1 &http2
+
+What is HTTP?
+	Hypertext Transfer Protocol (HTTP) is an application protocol that is, currently, the foundation of data communication for the World Wide Web.
+HTTP is based on the Client/Server model. Client/Server model can be explained as two computers, Client (receiver of service) and Server (provider of service) that are communicating via requests and responses.
+A simple and abstract example would be a restaurant guest and a waiter. The guest (Client) asks (sends request) waiter (Server) for a meal, then the waiter gets the meal from the restaurant chef (your application logic) and brings the meal to the guest.
+The first usable version of HTTP was created in 1997. Because it went through several stages of development, this first version of HTTP was called HTTP/1.1. This version is still in use on the web. In 2015, a new version of HTTP called HTTP/2 was created.
+HTTP/2 solves several problems that the creators of HTTP/1.1 did not anticipate. In particular, HTTP/2 is much faster and more efficient than HTTP/1.1. One of the ways in which HTTP/2 is faster is in how it prioritizes content during the loading process.
+What is Prioritization?
+	In the context of web performance, prioritization refers to the order in which pieces of content are loaded. Suppose a user visits a new website and navigates to an article. Should the top of the article load first? Should the text of the article load first? Should the banner ads loads first?
+Prioritization affects a webpage’s load time. For example, certain resources, like JavaScript files, may block the rest of the page from loading if they have to load first. More of the page can load at once if these render-blocking resources load last.
+In addition, the order in which these pages resources load affects how the user perceives page load time. If only behind-the-scenes content (like a CSS file) or content the user can’t see immediately (like banner ads at the bottom of the page) loads first, the user will think the page is not loading at all. If the content that’s most important to the user loads first, such as the image at the top of the page, then the user will perceive the page as loading faster.
+How does prioritization in HTTP/2 affect performance?
+	In HTTP/2, developers have hands-on, detailed control over prioritization. This allows them to maximize perceived and actual page load speed to a degree that was not possible in HTTP/1.1.
+HTTP/2 offers a feature called weighted prioritization. This allows developers to decide which page resources will load first, every time. In HTTP/2, when a client makes a request for a webpage, the server sends several streams of data to the client at once, instead of sending one thing after another. This method of data delivery is known as multiplexing. Developers can assign each of these data streams a different weighted value, and the value tells the client data streams to render first.
+
+Imagine that Alice wants to read a novel that her friend Bob wrote, but both Alice and Bob only communicate through the regular mail. Alice sends a letter to Bob and asks Bob to send her his novel. Bob decides to send the novel 
+
+HTTP/1.1 – style: He mails one chapter at a time, and he only mails the next chapter after receiving a reply letter from Alice confirming that she received the previous chapter. Using this method of content delivery, it takes Alice many weeks to read Bob’s novel.
+Now imagine that Bob decides to send Alice his novel 
+HTTP/2 –style: In this case, he sends each chapter of the novel separately (to stay within the postal service’s size limits) but all at the same time. He also numbers each chapter: Chapter 1, Chapter 2, etc. Now, Alice receives the novel all at once and can assemble it in the correct order on her own time. If a chapter is missing, she may send a quick reply asking for that specific chapter, but otherwise the process is complete, and Alice can read the novel in just a few days.
+HTTP/2, data is send all at once, much like Bob when he sends Alice multiple chapter at once. And just like Bob, developers get to number the chapters in HTTP/2. They can decide if the text of a webpage loads first, or the CSS files, or the JavaScript, or whatever they feel is most important for the user experience.
+What are the other difference between HTTP/2 and HTTP/1.1 that impact performance?
+Multiplexing:
+	HTTP/1.1 loads resources one after the other, so if one resource cannot be loaded, it blocks all the other resources behind it. In contract, HTTP/2 is able to use a single TCP connection to send multiple streams of data at once so that no one resource blocks any other resources. HTTP/2 does this by splitting data into binary-code messages and numbering these messages so that the client knows which streams each binary message belongs to.
+Server push:
+	Typically, a server only serves content to a client ask for it. However, this approach is not always practical for modern web pages, which often involves several dozen separate resources that the client must request. HTTP/2 solves this problem by allowing a server to “push” content to a client asks for it. The server also sends a message letting the client know what pushed content to expect –like  if Bob had send Alice a Table of Contents of his novel before sending the whole thing.
+Header compression:
+	Small files load more quickly than large ones. To speed up web performance, both HTTP/1.1 & HTTP/2  compress HTTP message to make them smaller. However, HTTP/2 uses a more advanced compression method called HPACK that eliminates redundant information in HTTP header packets. This eliminates a few bytes from every HTTP packet. Given the volume of  HTTP  packets involves in loading even a single webpage, those bytes add up quickly, resulting in faster loading.
+
+
+
+Objects and Its Internal Representation in JavaScript
+
+	Objects in JavaScript, is its most important data-type and forms the building blocks for modern JavaScript. These objects are quite different from JavaScript’s primitive data-type (Number, String, Boolean, null, undefined and symbol) in the sense that while these primitive data-type all store a single value each (depending on their types).
+ Objects are more complex and each object may contain any combination of these primitive data-types as well as reference data-types. An objects, is a reference data-type. Variables that are assigned a reference value are given a reference or a pointer to that value. That reference or pointer pointer points to the location in memory where the object is stored. The variables don’t actually store the value.
+Loosely speaking, objects in JavaScript may be defined as an unordered collection of related data, of primitive or reference types, in the form of “key: value” pairs. These keys can be variables or functions and are called properties and methods, respectively, in the context of an object.
+For example: If your object is a student, it will have properties like name, age, address, id, etc and methods like updateAddress, updateName, etc.
+
+Objects and properties
+	A JavaScript object has properties associated with it. A property of an object can be explained as a variable that is attached to the object. Object properties are basically the same as ordinary JavaScript variables, except for the attachment to objects. The properties of an object define the characteristics of the object. You access the properties of an object with a simple dot-notation:
+
+objectName.propertyName
+Like all JavaScript variables, both the objects (which could be a normal variable) and property name are case sensitive. You can define a property by assigning it a value. For example, let’s create an object names myCar and give it properties named make, model, and year as follows:
+
+var myCar = new Object();
+myCar.make = ‘Ford’;
+myCar.model = ‘Mustang’;
+myCar.year = 1969;
+
+Unassigned properties of an object are undefined (and not null).
+
+myCar.color; //undefined
+
+Properties of JavaScript objects can also be accessed or set using a bracket notation (for more details see property accessors). Objects are sometimes called associative arrays, since each property is associated with a string value that can be used to access it. So, for example, you could access the properties of the myCar object as follows:
+myCar[‘make’] = ‘Ford’;
+myCar[‘model’] = ‘Mustang’;
+myCar[‘year’] = 1969;
+
+An Objects property name can be any valid JavaScript String, or anything that can be converted to a string, including the empty string. However, any property name that is not a valid JavaScript identifier (for example, a property name that has a space or a hyphen, or that starts with a number) can only be accessed using the square bracket notation. This notation is also very useful when property names are to be dynamically determined (when the property name is not determined until runtime). Examples are as follows:
+
+
+//four variables are created and assigned in a single go,
+//separate by commas
+Var	myObj = new Object(),
+str = ‘myString’,
+rand = Math.random(),
+obj = new Object();
+
+myObj.type 			= ‘Dot syntax’;
+myObj [‘date created’] 	= ‘String with space’;
+myObj [str] 			= ‘String value’;
+myObj [rand] 			= ‘Random Number’;
+myObj [obj] 			= ‘Object’;
+myObj [‘’] 	= ‘Even an empty string’;
+console.log(myObj);
+
+You can also access properties by using a string value that is stored in a variable:
+var propertyName = ‘make’;
+myCar [propertyName] = ‘Ford’;
+propertyName = ‘model’;
+myCar [propertyName] = ‘Mustang’;
+
+You can use the bracket notation with for...in to iterate over all the enumberable properties of an object. To illustrate how this works, the following function displays the properties of the object when you pass the object and the object’s name as arguments to the function:
+Function showProps(obj,objName){
+var result = ``;
+for (var i in Obj) {
+	// obj.hasOwnProperty() is used to filter out properties from the object’s prototype chain
+	if (obj.hasOwnProperty(i)) {
+	result = result + `${objName}.${i} = ${obj[i]}\n`;
+	}
+}
+	Return result;
+}
+
+So, the function call showProps(myCar, “myCar”) would return the following:
+myCar.make = Ford
+myCar.model = Mustang
+myCar.year = 1969
+
+Creating Objects in JavaScript:
+Create JavaScript Object with Object Literal
+One of easiest way to create JavaScript object is object liertal, simply define the property and values inside curly braces as shown below
+Let bike = {name: ‘SuperSport’, maker: ‘Ducati’, engine: ‘937cc’};
+
+Create JavaScript Object with Constructor
+Constructor is nothing but a function and with help of new keyword, constructor function allows to create multiple objects of same flavour as shown below
+function Vehicle(name, maker) {
+	this.name = name;
+	this.maker = maker;
+}
+let car1 = new Vehicle(‘Fiesta’, ‘Ford’);
+let car2 = new Vehicle(‘Santa Fe’, ‘Hyundai’)
+console.log(car1.name);		//Output: Fiesta
+console.log(car2.name);		//Output: Santa Fe
+
+Using the JavaScript Keyword new
+The following example also creates a new JavaScript object with four properties:
+Example
+var person = new Object();
+person.firstName = “John”;
+person.lastname = “Doe”;
+person.age = 50;
+person.eyeColor = “blue”;
+Using the Object.create method
+Objects can also be created using the object.create() method. This method can be very useful, because it allows you to choose the prototype object for the object you  want to create, without having to define a constructor function.
+
+
+//Animal properties and method encapsulation
+var Animal = {
+	type: ‘Invertebrates’ //Default value of properties
+	displayType: function() { // Method which will display type of Animal
+	console.log(this.type);
+	}
+};
+// Create new animal type animal1
+var animal1 = object.create(Animal);
+animal1.displayType(); // Output: Invertebrates
+// Create new animal type called Fishes
+var fish = Object.create(Animal);
+fish.type = ‘Fish’;
+fish.displayType();
+
+//Output: Fishes	
+
+
+
