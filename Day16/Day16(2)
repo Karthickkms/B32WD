@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Kolker+Brush&family=Lexend+Deca:wght@100;400;600&family=Licorice&family=Open+Sans:wght@300;400;500&family=Pacifico&family=The+Nautigal&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+   <style>
+        .hd{
+            width:1500px;
+            height: 80px;
+            background-color: hsl(203deg 20% 23%);
+            text-align: center;
+            color: white;
+            font-family: 'Open Sans', sans-serif;
+            font-size:30px;
+            letter-spacing: 3px;
+            padding-top: 50px;
+            padding-bottom: 0px;
+            
+            
+            
+            
+
+        }
+        section{
+            width: 1500px;
+            height: 900px;
+            background-color: rgb(202 210 197);
+        }
+        .one{
+            background-color: hsl(0deg 0% 21%) !important;
+            width:400px;
+            height: 650px;
+            margin-left: 40px;
+            border-radius: 30px;
+            
+            
+        }
+        .two{
+            background-color: hsl(0deg 0% 21%) !important;
+            width: 700px;
+            height: 50px;
+            border-radius: 15px;
+            margin-bottom: 70px;
+            margin-top:15px;
+            margin-left: 110px;
+            text-align: left;
+            color: rgb(161 161 161);
+            font-family: 'Open Sans', sans-serif;
+            font-size: 25px;
+            letter-spacing: 2px;
+            padding-left: 30px;
+            padding-top: 10px;
+            
+           
+            
+
+        }
+        .three{
+            background-color: hsl(0deg 0% 21%) !important;
+            width: 240px;
+            height: 150px;
+            border-radius: 20px;
+            margin-bottom: 70px;
+        }
+        .four{
+            background-color: hsl(0deg 0% 21%) !important;
+            width: 950px;
+            height: 240px;
+            border-radius: 30px;
+        }
+        .flex1{
+            display: flex;
+            margin-top:60px;
+            justify-content: space-around;
+           
+        }
+        .flex2{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        i{
+            font-size: 50px;
+            position:absolute;
+            color:white;
+            padding-top: 40px;
+            padding-left: 30px;
+        }
+       
+    </style>
+</head>
+<body>
+    
+
+<section>
+    <i class="fab fa-github"></i>
+    <p class="hd">GITHUB</p>
+    
+    <div class="flex1">
+        <p class="one"></p>
+        <div>
+            <p class="two">Search</p>
+            <div class="flex2">
+                <p class="three"></p>
+                <p class="three"></p>
+                <p class="three"></p>
+            </div>
+            <p class="four"></p>
+        </div>
+    </div>
+</section>
+
+
+
+</body>
+</html>
