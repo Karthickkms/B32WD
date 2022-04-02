@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" media="" href="/style.css">
+</head>
+
+<body class = "poster">
+
+    <!-- container  flex-->
+    
+    <div class="container">
+
+        <!-- title header -->
+        <div class="header">
+            <h2>Drawing of the Art</h2>
+            <p>Number of available seats: 20</p>
+        </div>
+
+        <!-- content flex -->
+
+        <div class="content">
+            <div class="section1">
+                <img src="https://images.template.net/wp-content/uploads/2017/01/12104438/Butterfly-Art-Drawing.jpg" alt="image">
+            </div>
+            
+            <div class="section2">
+                <form action="#">
+                    <div class="box">
+                        <label for="name">Name:</label>
+                        <input type="text" name="name" id="name">
+                    </div>
+
+                    <div class="box">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email">
+                    </div>
+
+                    <div class="box">
+                        <label for="phone">Phone no:</label>
+                        <input type="number" name="phone" id="phone">
+                    </div>
+
+                    <div class="box">
+                        <label for="seats">Number of seats:</label>
+                        <input type="number" name="seats" id="seats">
+                    </div>
+
+                    <div class="box">
+                        <label for="name">Name of Attendee 2:</label>
+                        <input type="text" name="name" id="name">
+                    </div>
+
+                    <div class="box">
+                        <button class="btn1" type="submit">Submit</button>
+                        <button class="btn2" type="submit">Cancel</button>
+                    </div>
+                    
+                   
+
+                   body {
+
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+   
+}
+
+.container {
+    width: 800px;
+    height: 400px;
+    background-color: rgb(104, 80, 80);
+    border-radius: 18px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.header {
+    width: 100%;
+    height: 12%;
+    text-align: center;
+}
+
+.content {
+    height: 250px;
+    margin: 30px;
+    border: 2px solid rgb(117, 127, 168);
+    display: flex;
+    
+}
+
+.section1 {
+    width: 40%;
+    background-color: beige;
+    
+    
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.section2 {
+    width: 60%;
+    display: flex;
+    text-align: right;
+    margin-left: 10%;
+    padding: 0 10px;
+
+   
+}
+
+.box {
+    margin: 15px;
+}
+
+input {
+    border-radius: 10px;
+    padding: 2.8px;
+}
+
+button {
+    border-radius: 10px;
+}
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
