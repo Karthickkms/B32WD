@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servey form</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<link rel="stylesheet" href="surveyform.css">
+</head>
+<body>
+    <section class="formbody">
+        <div>
+
+           <div>  
+            <label class="heading" for="name">Name*</label><br>
+            <input class="inpwidth" type="text" id="name" size="25"placeholder="FirstName">
+            <input class="inpwidth"type="text" size="25"placeholder="LastName">
+           </div>
+<br>
+           <div>
+            <label class="heading" for="email">Email*</label><br>
+            <input class="inpwidth"type="email"  size="56" >
+           </div>
+<br>
+           <div>
+               <label class="heading" for="">Your Experience*</label><br>
+                
+               <div class="container">
+                   <span class="fa fa-star fa-2x checked"></span>
+                   <span class="fa fa-star fa-2x checked"></span>
+                   <span class="fa fa-star fa-2x checked"></span>
+                   <span class="fa fa-star fa-2x checked"></span>
+                   <span class="fa fa-star fa-2x checked"></span>
+                   
+               </div>
+               <p>Overall, how would you rate you experience with us?</p>
+           <div>
+
+            <label class="heading" for="">how satisfied are you with*</label><br>
+               <table>
+                    <tr>
+                        <td></td>
+                        <td>Very Unsatisfied</td>
+                        <td>Unsatisfied</td>
+                        <td>Neutral</td>
+                        <td>satisfied</td>
+                        <td>Very satisfied</td>
+                    
+                    </tr>
+                    <tr class="trbck">
+                    <td class="td1">Purchase</td>
+                    <td><input type="Radio" name="Purchase"></td>
+                    <td><input type="Radio"name="Purchase"></td>
+                    <td><input type="Radio"name="Purchase"></td>
+                    <td><input type="Radio"name="Purchase"></td>
+                    <td><input type="Radio"name="Purchase"></td>
+                    </tr>
+                    <tr><td class="td1">Service</td>
+                        <td><input type="Radio" name="Service"></td>
+                        <td><input type="Radio"name="Service"></td>
+                        <td><input type="Radio"name="Service"></td>
+                        <td><input type="Radio"name="Service"></td>
+                        <td><input type="Radio"name="Service"></td></tr>
+                    <tr class="trbck"><td class="td1">Company Overall</td>
+                        <td><input type="Radio" name="Company_Overall"></td>
+                        <td><input type="Radio"name="Company_Overall"></td>
+                        <td><input type="Radio"name="Company_Overall"></td>
+                        <td><input type="Radio"name="Company_Overall"></td>
+                        <td><input type="Radio"name="Company_Overall"></td></tr>
+                    
+                </table>
+           </div>
+
+           <div>
+                <label class="heading" for="">how likely ara you to*</label><br>
+            <table>
+                <tr>
+                    <td></td>
+                    <td>Very Unlikely</td>
+                    <td>Unlikely</td>
+                    <td>Neutral</td>
+                    <td>likely</td>
+                    <td>Very likely</td>
+                
+                </tr>
+                <tr class="trbck">
+                <td class="td1">Buy from us again</td>
+                <td><input type="Radio" name="Buy"></td>
+                <td><input type="Radio"name="Buy"></td>
+                <td><input type="Radio"name="Buy"></td>
+                <td><input type="Radio"name="Buy"></td>
+                <td><input type="Radio"name="Buy"></td>
+                </tr>
+                <tr><td class="td1">Recommend our<br> Product to others</td>
+                    <td><input type="Radio" name="Product"></td>
+                    <td><input type="Radio"name="Product"></td>
+                    <td><input type="Radio"name="Product"></td>
+                    <td><input type="Radio"name="Product"></td>
+                    <td><input type="Radio"name="Product"></td></tr>
+                <tr class="trbck"><td class="td1">Recommend our<br> company to others</td>
+                    <td><input type="Radio" name="company"></td>
+                    <td><input type="Radio"name="company"></td>
+                    <td><input type="Radio"name="company"></td>
+                    <td><input type="Radio"name="company"></td>
+                    <td><input type="Radio"name="company"></td></tr>
+                
+            </table></div>
+
+            <div>
+                <p><p>
+                    <label class="heading" for="">Additional comments or suggestions</label><br>
+                <textarea name="" id="" cols="68" rows="10"></textarea>
+            </div>
+            <button type="submit">Submit</button>
+            </div>
+           
+        
+
+        </div>.formbody{
+    border: 1px solid grey;
+    width: 600px;
+    padding:10px
+}
+.heading{
+    font-weight: bold;
+    font-size: 20pxpx;
+}
+td{
+    text-align: center;
+    padding-top: 10px;
+    
+}
+.td1{
+    text-align: left;
+}
+.inpwidth{
+    height: 30px;
+}
+
+.trbck{
+    background-color:hsl(0deg 0% 95%); ;
+}
+button{
+    width:100px;
+    height: 50px;
+    font-size: 24px;
+    border: 1px grey;
+}
+.checked{
+    color:orange;
+}
+body{
+    display:flex;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+}
+table{
+    display: flex;
+}
+    </section>
+</body>
+</html>
